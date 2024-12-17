@@ -1,0 +1,10 @@
+{
+    "name": "Vremaroiu Andrei Florin",
+    "bio": "My bio is none of your business.",
+    "skills": ["Python", "Flask", "JavaScript", "HTML", "CSS", "Who cares"],
+    "contact": {
+      "email": "andreivremaroiu225@gmail.com",
+      "phone": "+40724046435"
+    }
+  }
+  
