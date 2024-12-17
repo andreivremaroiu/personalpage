@@ -6,6 +6,9 @@
     <title>Projects</title>
 </head>
 <body>
+    {% extends 'layout.html' %}
+
+    {% block content %}
     <h1>My Projects</h1>
     
     {% if projects %}
@@ -22,5 +25,7 @@
     {% else %}
         <p>No projects found.</p>
     {% endif %}
+
+    {% endblock %}
 </body>
 </html>
