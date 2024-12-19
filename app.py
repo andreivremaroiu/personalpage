@@ -35,7 +35,11 @@ def projects():
     projects = Project.query.all()  # Get all the projects
     return render_template('projects.html', projects=projects)
 
-@app.route('/add_project', methods=['GET', 'POST'])
+@app.route('/admin_panel')
+def admin_panel():
+    return render_template('admin_panel.html')
+
+@app.route('/admin_panel/add_project/', methods=['GET', 'POST'])
 def add_project():
     if request.method == 'POST':
         # Get data from the form
@@ -59,7 +63,7 @@ def add_project():
         db.session.commit()
 
         # Redirect to home or another page after successful submission
-        return redirect(url_for('home'))
+        return redirect(url_for('admin_panel'))
 
     return render_template('add_project.html')
 
