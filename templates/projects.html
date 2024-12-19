@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <!-- Add Bootstrap CSS link here if not already included in layout.html -->
 </head>
 <body>
     {% extends 'layout.html' %}
 
     {% block content %}
     <h1>My Projects</h1>
-    
+
     {% if projects %}
-        <ul>
+        <div class="row">
             {% for project in projects %}
-                <li>
-                    <strong>{{ project.title }}</strong><br>
-                    <em>{{ project.yearCreated }}</em><br>
-                    <p>{{ project.description }}</p>
-                    <p><strong>Technologies Used:</strong> {{ project.technology }}</p>
-                </li>
+                <div class="col-md-4 mb-3">
+                    <div class="card shadow">
+                        <img src="{{ project.imageUrl }}" class="card-img-top" alt="{{ project.title }} image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ project.yearCreated }}</h6>
+                            <p class="card-text">{{ project.description }}</p>
+                            <p class="card-text">
+                                <strong>Technologies Used:</strong> {{ project.technology }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     {% else %}
         <p>No projects found.</p>
     {% endif %}

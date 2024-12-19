@@ -18,6 +18,7 @@ class Project(db.Model):
     description = db.Column(db.Text, nullable=False)
     technology = db.Column(db.String(100), nullable=False)
     yearCreated = db.Column(db.Integer, nullable=False)
+    imageUrl = db.Column(db.Text, nullable=True)
 
     def __repr__(self):
         return f"Project('{self.title}', '{self.description}', '{self.technology}', '{self.yearCreated}')"
@@ -42,13 +43,15 @@ def add_project():
         description = request.form['description']
         technology = request.form['technology']
         year_created = request.form['yearCreated']
+        image_url = request.form['imageUrl']
 
         # Create new project object
         new_project = Project(
             title=title,
             description=description,
             technology=technology,
-            yearCreated=year_created
+            yearCreated=year_created,
+            imageUrl=image_url
         )
 
         # Add the new project to the database

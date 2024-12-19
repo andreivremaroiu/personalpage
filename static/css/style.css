@@ -1,0 +1,37 @@
+/* Body styling */
+body {
+    background-color: #FAFAFA; /* Very Light Gray for a clean blog look */
+    font-family: Arial, sans-serif;
+    color: #333333; /* Neutral Dark Gray for text readability */
+}
+
+/* Navbar styling */
+.navbar {
+    background: linear-gradient(90deg, #0077B6, #0096C7); /* Gradient Blue */
+}
+
+.navbar .navbar-brand, 
+.navbar .nav-link {
+    color: #FFFFFF !important; /* White text for contrast on blue background */
+    font-weight: 500; /* Slightly bold for better readability */
+}
+
+.navbar .nav-link:hover {
+    color: #90E0EF !important; /* Soft Aqua Blue for hover effect */
+}
+
+.navbar .nav-link.active {
+    font-weight: bold;
+    text-decoration: none;
+    color: #CAF0F8 !important; /* Lighter Blue for active state */
+}
+/* Ensure all cards have the same height */
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure card fills the height of the parent container */
+}
+
+.card-body {
+    flex-grow: 1; /* Ensures the body takes up available space within the card */
+}
