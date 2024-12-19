@@ -35,3 +35,22 @@ body {
 .card-body {
     flex-grow: 1; /* Ensures the body takes up available space within the card */
 }
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 600px; /* Adjust to fit your container */
+    margin: 0 auto; /* Center grid */
+}
+
+.btn-square {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    padding: 0;
+}

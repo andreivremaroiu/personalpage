@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-
 app = Flask(__name__)
 
 # Configuration for SQLAlchemy and Flask-Migrate
@@ -66,6 +65,27 @@ def add_project():
         return redirect(url_for('admin_panel'))
 
     return render_template('add_project.html')
+
+# Placeholder routes for unconfigured admin panel links
+@app.route('/admin_panel/delete_project')
+def delete_project():
+    return "Delete project page is not yet implemented."
+
+@app.route('/admin_panel/write_post')
+def write_post():
+    return "Write a post page is not yet implemented."
+
+@app.route('/admin_panel/settings')
+def settings():
+    return "Settings page is not yet implemented."
+
+@app.route('/admin_panel/view_profile')
+def view_profile():
+    return "View profile page is not yet implemented."
+
+@app.route('/admin_panel/contact')
+def contact_admin():
+    return "Contact admin page is not yet implemented."
 
 # Route for About Me page
 @app.route('/about')
